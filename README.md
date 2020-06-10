@@ -1,6 +1,5 @@
 # RSA-Prime-1024-bit
 ---
-# RSA  
 # ***Mã Hóa RSA bằng 2 số nguyên tố 1024 bits***  
 ## ***Các hàm toán học được sử dụng trong mã hóa***  
  * powMod(a,b,m):  
@@ -39,6 +38,7 @@
         v1 , v2 , v3 =  t1 , t2 , t3  
       return u1 , u2 , u3 
    ```  
+   ---
 ## ***Kiểm tra tính nguyên tố***  
  * Firsthandling : kiểm tra tiền xử lí : lấy số đó chia cho 1000 số nguyên tố đầu tiên : nếu số đó mà chia hết cho 1 trong 1000 số đó thì loại. Còn lại được chọn tiếp tục vào bước kiểm tra tiếp theo.  
    * Code :  
@@ -89,6 +89,7 @@
         t -= 1
       return False
    ```
+   ---
 ## ***Sinh số nguyên tố***  
  * Tạo hàm random 1 số bằng bao nhiêu bit và đảm bảo rằng số đó luôn luôn lẻ  
    * Code :
@@ -100,7 +101,7 @@
       return a
    ```
  * Để sinh số ta chạy kiểm tra bằng các hàm kiểm tra tính nguyên tố ở trên, ta sẽ được 2 số có độ dài 1024 bits  
- 
+ ---
 ## ***Tạo cặp khóa***  
  * Lấy ra 2 số q và p ta vừa sinh ra  
  * Ta tính n = q*p  , e = (q-1)(p-1)
@@ -109,21 +110,17 @@
  * Và ta có cặp khóa: 
    * Khóa công khai(public key): (n,E)  
    * Khóa bí mật(private key) : (n,d)  
- * [linkcode](  https://github.com/HoangNguyen242/RSA/blob/master/taokhoa.py)  
- 
+ ---
 ## ***Mã hóa RSA***  
  * Decode(mã hóa):  
    * Import thư viện base64 : dùng để chuyển thông tin bí mật thành dạng các con số  
    * Ta ghép các con số sau khi đã chuyển đổi lại ta được bản rõ P  
    * Ta mã hóa lại bằng công thức : C = P^E mod n  
-   * [linkcode](https://github.com/HoangNguyen242/RSA/blob/master/mahoa.py)  
    
  * Encode(giải mã):  
    * Lấy bản mã C về từ mã hóa  
    * Lấy cặp khóa bí mật(n,d)  
    * Giải bản mã hóa C thành bản rõ P bằng công thức : P = C^d mod n  
    * Chuyển đổi bản rõ P về thông tin bí mật bằng base64  
-   * [linkcode](https://github.com/HoangNguyen242/RSA/blob/master/giaima.py)  
-   
  
    
